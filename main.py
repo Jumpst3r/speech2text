@@ -15,13 +15,13 @@ ext = args.inputFile.split(".")[1]
 
 if ext == "mp3":
     sound = AudioSegment.from_mp3(args.inputFile)
-    sound.export(basename + '.wav', format="wav")
+    sound.export('audio' + '.wav', format="wav")
 
 r = sr.Recognizer()
 OUTFILE = "transcript.txt"
 file =  open(args.outputFolder + OUTFILE, 'w')
 
-with sr.AudioFile(basename + '.wav') as src:
+with sr.AudioFile('audio' + '.wav') as src:
     while True:
         try:
             audio = r.listen(src)
