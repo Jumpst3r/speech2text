@@ -18,7 +18,7 @@ if ext == "mp3":
     sound.export(basename + '.wav', format="wav")
 
 r = sr.Recognizer()
-OUTFILE = "output.txt"
+OUTFILE = "transcript.txt"
 file =  open(args.outputFolder + OUTFILE, 'w')
 
 with sr.AudioFile(basename + '.wav') as src:
