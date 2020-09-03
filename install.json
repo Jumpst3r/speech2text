@@ -1,0 +1,62 @@
+{
+	"general": {
+		"name": "speech2text",
+		"description": "speech to text",
+		"developer": "Nicolas Dutly",
+		"affiliation": "University Of Fribourg",
+		"email": "ndutly@student.ethz.ch",
+		"author": "Nicolas Dutly",
+		"DOI": "",
+		"type": "text-processing",
+		"license": "MIT",
+		"ownsCopyright": "0"
+	},
+	"input": [
+		{
+			"file": {
+				"name": "audio",
+				"description": "The input text file to translate",
+				"options": {
+					"required": true,
+					"filename": "audio.*",
+					"mimeTypes": {
+						"allowed": [
+							"audio/mpeg",
+							"audio/wav"
+						],
+						"default": "audio/mpeg"
+					}
+				}
+			}
+		},
+		{
+			"outputFolder": {}
+		}
+	],
+	"output": [
+		{
+			"file": {
+				"name": "output",
+				"type": "text",
+				"description": "resulting transcription",
+				"options": {
+					"filename":"output.txt",
+					"mimeTypes": {
+						"allowed": [
+							"text/plain"
+						],
+						"default": "text/plain"
+					},
+					"visualization": false
+				}
+			}
+		}
+	],
+	"method": {
+		"imageType": "docker",
+		"imageName": "jumpst3r/speech2text",
+		"testData": "https://www.dropbox.com/s/ixj7tu730ad074n/tmp234525.zip?dl=1",
+		"executableType": "bash",
+		"executable_path": "/input/script.sh"
+	}
+}
