@@ -36,7 +36,7 @@
 	"output": [
 		{
 			"file": {
-				"name": "output",
+				"name": "transcription",
 				"type": "text",
 				"description": "resulting transcription",
 				"options": {
