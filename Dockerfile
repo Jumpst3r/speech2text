@@ -9,3 +9,4 @@ RUN pip install --upgrade pip && \
     mkdir /output
 RUN chmod +x script.sh
 CMD /bin/bash
+RUN apt update && apt install -yq ffmpeg
