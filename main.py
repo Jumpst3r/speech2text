@@ -21,7 +21,9 @@ r = sr.Recognizer()
 OUTFILE = "transcript.txt"
 file =  open(args.outputFolder + OUTFILE, 'w')
 
-with sr.AudioFile('audio' + '.wav') as src:
+infile = "audio.wav" if ext == "mp3" else args.inputFile
+
+with sr.AudioFile(infile) as src:
     while True:
         try:
             audio = r.listen(src)

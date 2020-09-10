@@ -1,11 +1,12 @@
 {
 	"general": {
 		"name": "speech2text",
-		"description": "speech to text",
+		"description": "Given an audio file, transcribe speech contents using google's public api and output the results to a plain text file.",
 		"developer": "Nicolas Dutly",
 		"affiliation": "University Of Fribourg",
 		"email": "ndutly@student.ethz.ch",
 		"author": "Nicolas Dutly",
+		"website": "https://github.com/Jumpst3r/speech2text",
 		"DOI": "",
 		"type": "text-processing",
 		"license": "MIT",
@@ -15,16 +16,17 @@
 		{
 			"file": {
 				"name": "audio",
-				"description": "The input text file to translate",
+				"description": "The input audio file to transcribe",
 				"options": {
 					"required": true,
 					"filename": "audio.*",
 					"mimeTypes": {
 						"allowed": [
 							"audio/mpeg",
+							"audi/mp3",
 							"audio/wav"
 						],
-						"default": "audio/mpeg"
+						"default": "audio/wav"
 					}
 				}
 			}
@@ -38,9 +40,9 @@
 			"file": {
 				"name": "transcription",
 				"type": "text",
-				"description": "resulting transcription",
+				"description": "resulting transcription in raw text format",
 				"options": {
-					"filename":"output.txt",
+					"filename":"transcript.txt",
 					"mimeTypes": {
 						"allowed": [
 							"text/plain"
@@ -55,7 +57,7 @@
 	"method": {
 		"imageType": "docker",
 		"imageName": "jumpst3r/speech2text",
-		"testData": "https://www.dropbox.com/s/ixj7tu730ad074n/tmp234525.zip?dl=1",
+		"testData": "https://www.dropbox.com/s/27ct5gfmwx1tl9b/audio456789o987654456789.zip?dl=1",
 		"executableType": "bash",
 		"executable_path": "/input/script.sh"
 	}
